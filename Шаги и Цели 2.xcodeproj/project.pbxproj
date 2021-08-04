@@ -13,6 +13,7 @@
 		F436283F26BB3500008386DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F436283D26BB3500008386DB /* Main.storyboard */; };
 		F436284126BB3502008386DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F436284026BB3502008386DB /* Assets.xcassets */; };
 		F436284426BB3502008386DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F436284226BB3502008386DB /* LaunchScreen.storyboard */; };
+		F436284C26BB4802008386DB /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F436284B26BB4802008386DB /* AddViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		F436284026BB3502008386DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F436284326BB3502008386DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F436284526BB3502008386DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F436284B26BB4802008386DB /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,13 +58,14 @@
 		F436283626BB3500008386DB /* Шаги и Цели 2 */ = {
 			isa = PBXGroup;
 			children = (
-				F436283726BB3500008386DB /* AppDelegate.swift */,
-				F436283926BB3500008386DB /* SceneDelegate.swift */,
 				F436283B26BB3500008386DB /* ViewController.swift */,
 				F436283D26BB3500008386DB /* Main.storyboard */,
-				F436284026BB3502008386DB /* Assets.xcassets */,
 				F436284226BB3502008386DB /* LaunchScreen.storyboard */,
+				F436284026BB3502008386DB /* Assets.xcassets */,
+				F436283726BB3500008386DB /* AppDelegate.swift */,
+				F436283926BB3500008386DB /* SceneDelegate.swift */,
 				F436284526BB3502008386DB /* Info.plist */,
+				F436284B26BB4802008386DB /* AddViewController.swift */,
 			);
 			path = "Шаги и Цели 2";
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			files = (
 				F436283C26BB3500008386DB /* ViewController.swift in Sources */,
 				F436283826BB3500008386DB /* AppDelegate.swift in Sources */,
+				F436284C26BB4802008386DB /* AddViewController.swift in Sources */,
 				F436283A26BB3500008386DB /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
