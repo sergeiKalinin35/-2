@@ -21,6 +21,7 @@ class ViewController: UIViewController {
         
         table.rowHeight = 70
         
+        
     }
     
     @IBAction func  didTapAdd() {
@@ -34,7 +35,7 @@ class ViewController: UIViewController {
         vc.completion = { title, body, date in
             DispatchQueue.main.async {
                 self.navigationController?.popToRootViewController(animated: true)
-                let new = MyReminder(title: title, date: date, identifier: "id_ \(title)")
+                let new = MyReminder(title: title, body: body, date: date, identifier: "id_ \(title)")
                 self.models.append(new)
                 self.table.reloadData()
                 
@@ -141,7 +142,8 @@ extension ViewController: UITableViewDataSource {
         cell.textLabel?.text = models[indexPath.row].title
         let date = models[indexPath.row].date
         let formatter = DateFormatter()
-        formatter.dateFormat = "MMM, dd, YYYY"
+        formatter.dateStyle = .full
+        formatter.dateFormat = "dd.MM. HH:mm"
         cell.detailTextLabel?.text = formatter.string(from: date)
         
         
@@ -150,11 +152,29 @@ extension ViewController: UITableViewDataSource {
         
         return cell
     }
+    // удаление ячейки
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+        return .delete
+    }
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            tableView.beginUpdates()
+            models.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
+            
+            tableView.endUpdates()
+        }
+    }
+    
+    
     
 }
 
 struct MyReminder {
     let title: String
+    let body: String
     let date : Date
     let identifier: String
 }

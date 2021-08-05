@@ -15,10 +15,14 @@ class AddViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var datePicker: UIDatePicker!
     
     
-    public var completion: ((String, String, Date) -> Void)?
+    public var completion: ((String,
+                             String, Date) -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        datePicker.datePickerMode = .dateAndTime
+       let localeID = Locale.preferredLanguages.first
+        datePicker.locale = Locale(identifier: localeID!)
         titleField.delegate = self
         bodyField.delegate = self
         
@@ -34,7 +38,9 @@ class AddViewController: UIViewController, UITextFieldDelegate {
             
             let targetDate = datePicker.date
             
-            completion?(titleText,  bodyText, targetDate)
+            completion?(
+                titleText,
+                bodyText, targetDate)
             
         }
         
