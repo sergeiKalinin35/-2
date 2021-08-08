@@ -23,13 +23,67 @@
                                 <color key="separatorColor" systemColor="systemRedColor"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="80" id="ssD-a5-g84">
-                                        <rect key="frame" x="0.0" y="24.5" width="414" height="80"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="default" hidesAccessoryWhenEditing="NO" indentationWidth="10" reuseIdentifier="checked cell" rowHeight="70" id="ssD-a5-g84" customClass="ChekTableViewCell" customModule="Шаги_и_Цели_2" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="70"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ssD-a5-g84" id="8UV-r9-zcg">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="MaM-dJ-7dt">
+                                                    <rect key="frame" x="20" y="11" width="275" height="48"/>
+                                                    <subviews>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="157" translatesAutoresizingMaskIntoConstraints="NO" id="WIG-d0-qjo">
+                                                            <rect key="frame" x="0.0" y="0.0" width="275" height="23"/>
+                                                            <subviews>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Цель" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GBa-fw-zGN">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="59" height="23"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Время" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BlK-l3-iFe">
+                                                                    <rect key="frame" x="216" y="0.0" width="59" height="23"/>
+                                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                </label>
+                                                            </subviews>
+                                                        </stackView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Описание" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QGv-Ty-mhE">
+                                                            <rect key="frame" x="0.0" y="25" width="80" height="23"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ied-E9-MpZ" customClass="Checkbox" customModule="Шаги_и_Цели_2" customModuleProvider="target">
+                                                    <rect key="frame" x="345" y="11" width="49" height="48"/>
+                                                    <color key="backgroundColor" red="0.65587014830000001" green="0.85201268620000004" blue="0.17050951219999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="checked" value="NO"/>
+                                                    </userDefinedRuntimeAttributes>
+                                                    <connections>
+                                                        <action selector="checked:" destination="ssD-a5-g84" eventType="valueChanged" id="VW0-d7-V20"/>
+                                                    </connections>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottomMargin" secondItem="ied-E9-MpZ" secondAttribute="bottom" id="0PW-9E-QQN"/>
+                                                <constraint firstItem="MaM-dJ-7dt" firstAttribute="top" secondItem="8UV-r9-zcg" secondAttribute="topMargin" id="Edd-d5-j4w"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ied-E9-MpZ" secondAttribute="trailing" id="Lms-LI-0me"/>
+                                                <constraint firstItem="ied-E9-MpZ" firstAttribute="centerY" secondItem="8UV-r9-zcg" secondAttribute="centerY" id="Tdb-Cl-R6j"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="MaM-dJ-7dt" secondAttribute="bottom" id="d1d-26-2BM"/>
+                                                <constraint firstItem="ied-E9-MpZ" firstAttribute="leading" secondItem="MaM-dJ-7dt" secondAttribute="trailing" constant="50" id="qVm-nb-KR1"/>
+                                                <constraint firstItem="MaM-dJ-7dt" firstAttribute="leading" secondItem="8UV-r9-zcg" secondAttribute="leadingMargin" id="sTP-lW-XPd"/>
+                                                <constraint firstItem="ied-E9-MpZ" firstAttribute="top" secondItem="8UV-r9-zcg" secondAttribute="topMargin" id="si5-Ip-QGw"/>
+                                            </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="checkbox" destination="ied-E9-MpZ" id="0Sb-xE-teC"/>
+                                            <outlet property="label" destination="QGv-Ty-mhE" id="Fu0-EI-wdX"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

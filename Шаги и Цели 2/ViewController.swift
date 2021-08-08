@@ -11,7 +11,7 @@ class ViewController: UIViewController {
 
     @IBOutlet var table: UITableView!
     
-    var models = [MyReminder]()
+    var models = [Todo]()
     
     
     override func viewDidLoad() {
@@ -19,7 +19,8 @@ class ViewController: UIViewController {
         table.delegate = self
         table.dataSource = self
         
-       // table.rowHeight = 70
+     
+        table.rowHeight = 70
         
         navigationItem.leftBarButtonItem = editButtonItem
         
@@ -37,7 +38,7 @@ class ViewController: UIViewController {
         vc.completion = { title, body, date in
             DispatchQueue.main.async {
                 self.navigationController?.popToRootViewController(animated: true)
-                let new = MyReminder(title: title, date: date , identifier: "id_ \(title)")
+                let new = Todo(title: title, date: date , identifier: "id_ \(title)")
                 self.models.append(new)
                 self.table.reloadData()
                 
@@ -135,19 +136,16 @@ extension ViewController: UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! CheckTableViewCell
    
         cell.textLabel?.text = models[indexPath.row].title
-        let date = models[indexPath.row].date
         
+        
+        let date = models[indexPath.row].date
         let formatter = DateFormatter()
         formatter.dateStyle = .full
         formatter.dateFormat = "dd.MM. HH:mm"
         cell.detailTextLabel?.text = formatter.string(from: date)
-        
-        
-        
-        
         
         return cell
     }
@@ -206,12 +204,6 @@ extension ViewController: UITableViewDataSource {
     
 }
 
-struct MyReminder {
-    let title: String
-    let date : Date
-    let identifier: String
-    
-    
-}
+
 
 
