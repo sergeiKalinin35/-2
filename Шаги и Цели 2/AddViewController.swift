@@ -15,8 +15,7 @@ class AddViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var datePicker: UIDatePicker!
     
     
-    public var completion: ((String,
-                             String, Date) -> Void)?
+    public var completion: ((String, String, Date) -> Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,7 +37,7 @@ class AddViewController: UIViewController, UITextFieldDelegate {
             
             let targetDate = datePicker.date
             
-            completion?(titleText, bodyText, targetDate)
+            completion?(titleText, bodyText, targetDate )
             
             
             

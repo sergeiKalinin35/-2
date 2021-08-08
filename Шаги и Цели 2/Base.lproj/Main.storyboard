@@ -44,13 +44,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="BANANA PLAN 🍌" id="jmX-wi-mKS">
-                        <barButtonItem key="leftBarButtonItem" title="TEST" id="hNh-UB-a4L">
-                            <imageReference key="image" image="square.and.pencil" catalog="system" symbolScale="large"/>
-                            <color key="tintColor" red="0.53333333329999999" green="0.6588235294" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            <connections>
-                                <action selector="didTapTest" destination="BYZ-38-t0r" id="fZh-06-PvM"/>
-                            </connections>
-                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Item" width="1" id="ayg-bi-kqe">
                             <imageReference key="image" image="target" catalog="system" symbolScale="large"/>
                             <color key="tintColor" systemColor="systemRedColor"/>
@@ -135,7 +128,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="square.and.pencil" catalog="system" width="128" height="115"/>
         <image name="target" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

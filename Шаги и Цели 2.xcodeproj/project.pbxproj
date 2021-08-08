@@ -59,13 +59,13 @@
 			isa = PBXGroup;
 			children = (
 				F436283B26BB3500008386DB /* ViewController.swift */,
+				F436284B26BB4802008386DB /* AddViewController.swift */,
 				F436283D26BB3500008386DB /* Main.storyboard */,
 				F436284226BB3502008386DB /* LaunchScreen.storyboard */,
 				F436284026BB3502008386DB /* Assets.xcassets */,
 				F436283726BB3500008386DB /* AppDelegate.swift */,
 				F436283926BB3500008386DB /* SceneDelegate.swift */,
 				F436284526BB3502008386DB /* Info.plist */,
-				F436284B26BB4802008386DB /* AddViewController.swift */,
 			);
 			path = "Шаги и Цели 2";
 			sourceTree = "<group>";

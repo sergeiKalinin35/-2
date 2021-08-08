@@ -19,7 +19,9 @@ class ViewController: UIViewController {
         table.delegate = self
         table.dataSource = self
         
-        table.rowHeight = 70
+       // table.rowHeight = 70
+        
+        navigationItem.leftBarButtonItem = editButtonItem
         
         
     }
@@ -35,7 +37,7 @@ class ViewController: UIViewController {
         vc.completion = { title, body, date in
             DispatchQueue.main.async {
                 self.navigationController?.popToRootViewController(animated: true)
-                let new = MyReminder(title: title, body: body, date: date, identifier: "id_ \(title)")
+                let new = MyReminder(title: title, date: date , identifier: "id_ \(title)")
                 self.models.append(new)
                 self.table.reloadData()
                 
@@ -68,53 +70,50 @@ class ViewController: UIViewController {
         
 }
     
+    
 
-    // Кнопка теста
-    @IBAction func  didTapTest() {
-        
-        // тест уведомление 
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound], completionHandler: { success, error in
-            if success {
+    // Кнопка теста кнопка редактирования
+  //  @IBAction func  didTapTest() {
+        // тест уведомление
+  //      UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound], completionHandler: { success, error in
+     //       if success {
                 
                 // test
-                self.scheduleTest()
-            }
-            else if error != nil {
-                print("error occurred")
+      //          self.scheduleTest()
+      //      }
+    //        else if error != nil {
+     //           print("error occurred")
                 
-            }
+     //       }
             
-        })
-    }
+    //    })
+ //   }
     //окно уведомления
-    func scheduleTest() {
-        let content = UNMutableNotificationContent()
-        content.title  = "Заголовок!"
-        content.sound = .default
-        content.body = "Описание!⚓️"
+ //   func scheduleTest() {
+   //     let content = UNMutableNotificationContent()
+   //     content.title  = "Заголовок!"
+    //    content.sound = .default
+    //    content.body = "Описание!⚓️"
         
-        let targetDate = Date().addingTimeInterval(10)
-        let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents( [.year, .month, .day, .hour, .minute, . second],
-                                                                                                  from: targetDate)  ,
+   //     let targetDate = Date().addingTimeInterval(10)
+   //     let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents( [.year, .month, .day, .hour, .minute, . second],
+  //                                                                                                from: targetDate)  ,
                                                     
-                                                    repeats: false)
+    //                                                repeats: false)
         
-        let request = UNNotificationRequest(
-            identifier: "some_long_id",
-            content: content,
-            trigger: trigger)
-        UNUserNotificationCenter.current().add(request, withCompletionHandler: { error in
-            if error != nil {
-                print("something went wrong")
-            }
+    //    let request = UNNotificationRequest(
+    //        identifier: "some_long_id",
+   //         content: content,
+    //        trigger: trigger)
+    //    UNUserNotificationCenter.current().add(request, withCompletionHandler: { error in
+   //         if error != nil {
+   //             print("something went wrong")
+    //        }
             
-            })
+   //         })
         }
 
-}
-
-
-
+//}
 
 extension ViewController: UITableViewDelegate {
     
@@ -123,19 +122,17 @@ extension ViewController: UITableViewDelegate {
     }
 }
 
+
 extension ViewController: UITableViewDataSource {
-    
-    
-    
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    
+    //   func numberOfSections(in tableView: UITableView) -> Int {
+  //      return 1
+  //  }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return models.count
     }
+    
+    
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
@@ -154,6 +151,37 @@ extension ViewController: UITableViewDataSource {
         
         return cell
     }
+    
+    
+    // двигаем ячейку
+    func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+       let mu =  models.remove(at: sourceIndexPath.row)
+        models.insert(mu, at: destinationIndexPath.row)
+    }
+ //   func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
+ //     let currenTrack = models.remove(at: sourceIndexPath.row)
+//        models.insert(currenTrack, at: destinationIndexPath.row)
+ //   }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     // удаление ячейки
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .delete
@@ -168,17 +196,22 @@ extension ViewController: UITableViewDataSource {
             
             tableView.endUpdates()
         }
-    }
+        
+     
+}
     
+  
     
+
     
 }
 
 struct MyReminder {
     let title: String
-    let body: String
     let date : Date
     let identifier: String
+    
+    
 }
 
 
