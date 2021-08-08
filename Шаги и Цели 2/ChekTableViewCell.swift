@@ -9,7 +9,7 @@ import UIKit
 
 
 protocol CheckTableViewCellDelegate: AnyObject {
-  func checkTableViewCell(_ cell: CheckTableViewCell, didChagneCheckedState checked: Bool)
+  func checkTableViewCell(_ cell: ChekTableViewCell, didChagneCheckedState checked: Bool)
 }
 
 
@@ -79,4 +79,4 @@ class ChekTableViewCell: UITableViewCell {
     
     
   
-}
+

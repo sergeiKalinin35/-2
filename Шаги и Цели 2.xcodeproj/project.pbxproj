@@ -13,7 +13,7 @@
 		F436283F26BB3500008386DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F436283D26BB3500008386DB /* Main.storyboard */; };
 		F436284126BB3502008386DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F436284026BB3502008386DB /* Assets.xcassets */; };
 		F436284426BB3502008386DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F436284226BB3502008386DB /* LaunchScreen.storyboard */; };
-		F436284C26BB4802008386DB /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F436284B26BB4802008386DB /* AddViewController.swift */; };
+		F436284C26BB4802008386DB /* TodoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F436284B26BB4802008386DB /* TodoViewController.swift */; };
 		F4C9808A26C052160098B6E8 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C9808926C052160098B6E8 /* Checkbox.swift */; };
 		F4C9808C26C05B2F0098B6E8 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C9808B26C05B2F0098B6E8 /* Todo.swift */; };
 		F4C9808E26C05C780098B6E8 /* ChekTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C9808D26C05C780098B6E8 /* ChekTableViewCell.swift */; };
@@ -28,7 +28,7 @@
 		F436284026BB3502008386DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F436284326BB3502008386DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F436284526BB3502008386DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		F436284B26BB4802008386DB /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		F436284B26BB4802008386DB /* TodoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoViewController.swift; sourceTree = "<group>"; };
 		F4C9808926C052160098B6E8 /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
 		F4C9808B26C05B2F0098B6E8 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		F4C9808D26C05C780098B6E8 /* ChekTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChekTableViewCell.swift; sourceTree = "<group>"; };
@@ -66,7 +66,7 @@
 			children = (
 				F436283B26BB3500008386DB /* ViewController.swift */,
 				F4C9808B26C05B2F0098B6E8 /* Todo.swift */,
-				F436284B26BB4802008386DB /* AddViewController.swift */,
+				F436284B26BB4802008386DB /* TodoViewController.swift */,
 				F436283D26BB3500008386DB /* Main.storyboard */,
 				F4C9808926C052160098B6E8 /* Checkbox.swift */,
 				F4C9808D26C05C780098B6E8 /* ChekTableViewCell.swift */,
@@ -152,7 +152,7 @@
 				F436283C26BB3500008386DB /* ViewController.swift in Sources */,
 				F4C9808C26C05B2F0098B6E8 /* Todo.swift in Sources */,
 				F436283826BB3500008386DB /* AppDelegate.swift in Sources */,
-				F436284C26BB4802008386DB /* AddViewController.swift in Sources */,
+				F436284C26BB4802008386DB /* TodoViewController.swift in Sources */,
 				F436283A26BB3500008386DB /* SceneDelegate.swift in Sources */,
 				F4C9808A26C052160098B6E8 /* Checkbox.swift in Sources */,
 				F4C9808E26C05C780098B6E8 /* ChekTableViewCell.swift in Sources */,
