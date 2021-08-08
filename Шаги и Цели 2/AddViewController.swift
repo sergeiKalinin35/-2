@@ -38,10 +38,12 @@ class AddViewController: UIViewController, UITextFieldDelegate {
             
             let targetDate = datePicker.date
             
-            completion?(
-                titleText,
-                bodyText, targetDate)
+            completion?(titleText, bodyText, targetDate)
             
+            
+            
+            
+            dismiss(animated: true)
         }
         
     }
