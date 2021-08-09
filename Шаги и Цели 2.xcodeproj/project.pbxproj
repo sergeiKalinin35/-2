@@ -17,6 +17,7 @@
 		F4C9808A26C052160098B6E8 /* Checkbox.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C9808926C052160098B6E8 /* Checkbox.swift */; };
 		F4C9808C26C05B2F0098B6E8 /* Todo.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C9808B26C05B2F0098B6E8 /* Todo.swift */; };
 		F4C9808E26C05C780098B6E8 /* ChekTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4C9808D26C05C780098B6E8 /* ChekTableViewCell.swift */; };
+		F4D8871E26C143E800B9B7A7 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4D8871D26C143E800B9B7A7 /* AddViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		F4C9808926C052160098B6E8 /* Checkbox.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Checkbox.swift; sourceTree = "<group>"; };
 		F4C9808B26C05B2F0098B6E8 /* Todo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Todo.swift; sourceTree = "<group>"; };
 		F4C9808D26C05C780098B6E8 /* ChekTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChekTableViewCell.swift; sourceTree = "<group>"; };
+		F4D8871D26C143E800B9B7A7 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,6 +50,7 @@
 		F436282B26BB3500008386DB = {
 			isa = PBXGroup;
 			children = (
+				F4D8871D26C143E800B9B7A7 /* AddViewController.swift */,
 				F436283626BB3500008386DB /* Шаги и Цели 2 */,
 				F436283526BB3500008386DB /* Products */,
 			);
@@ -151,6 +154,7 @@
 			files = (
 				F436283C26BB3500008386DB /* ViewController.swift in Sources */,
 				F4C9808C26C05B2F0098B6E8 /* Todo.swift in Sources */,
+				F4D8871E26C143E800B9B7A7 /* AddViewController.swift in Sources */,
 				F436283826BB3500008386DB /* AppDelegate.swift in Sources */,
 				F436284C26BB4802008386DB /* TodoViewController.swift in Sources */,
 				F436283A26BB3500008386DB /* SceneDelegate.swift in Sources */,

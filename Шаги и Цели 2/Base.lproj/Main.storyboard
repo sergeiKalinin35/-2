@@ -31,7 +31,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="MaM-dJ-7dt">
-                                                    <rect key="frame" x="20" y="11" width="244" height="48"/>
+                                                    <rect key="frame" x="20" y="11" width="304.5" height="48"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="157" translatesAutoresizingMaskIntoConstraints="NO" id="WIG-d0-qjo">
                                                             <rect key="frame" x="0.0" y="0.0" width="244" height="23"/>
@@ -59,7 +59,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ied-E9-MpZ" customClass="Checkbox" customModule="Шаги_и_Цели_2" customModuleProvider="target">
-                                                    <rect key="frame" x="314" y="11" width="80" height="48"/>
+                                                    <rect key="frame" x="374.5" y="11" width="19.5" height="48"/>
                                                     <color key="backgroundColor" red="0.65587014830000001" green="0.85201268620000004" blue="0.17050951219999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="checked" value="NO"/>
@@ -83,7 +83,7 @@
                                         <connections>
                                             <outlet property="checkbox" destination="ied-E9-MpZ" id="0Sb-xE-teC"/>
                                             <outlet property="label" destination="QGv-Ty-mhE" id="Fu0-EI-wdX"/>
-                                            <segue destination="TeR-IV-MiX" kind="show" destinationCreationSelector="todoViewcontroller:" id="nf8-dJ-ztV"/>
+                                            <segue destination="4AG-hQ-aHP" kind="showDetail" destinationCreationSelector="todoViewcontroller:" id="jAF-Cp-ak3"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -113,8 +113,7 @@
                             <imageReference key="image" image="target" catalog="system" symbolScale="large"/>
                             <color key="tintColor" systemColor="systemRedColor"/>
                             <connections>
-                                <action selector="didTapAdd" destination="BYZ-38-t0r" id="pgA-K6-KwS"/>
-                                <segue destination="TeR-IV-MiX" kind="presentation" id="XdR-Oc-tbW"/>
+                                <segue destination="4AG-hQ-aHP" kind="showDetail" destinationCreationSelector="todoViewcontroller:" id="WNi-zI-z72"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -127,65 +126,92 @@
             <point key="canvasLocation" x="1047.8260869565217" y="135.9375"/>
         </scene>
         <!--Todo View Controller-->
-        <scene sceneID="n0K-l9-kpq">
+        <scene sceneID="YKD-hi-FqY">
             <objects>
-                <viewController storyboardIdentifier="add" id="TeR-IV-MiX" customClass="TodoViewController" customModule="Шаги_и_Цели_2" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="JVN-zC-cWX">
+                <viewController id="4AG-hQ-aHP" customClass="TodoViewController" customModule="Шаги_и_Цели_2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="QG0-pT-9WI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="NTM-09-SgW">
+                                <rect key="frame" x="18" y="404" width="378" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T7S-0N-Dbf">
+                                <rect key="frame" x="157" y="58" width="100" height="53"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="53" id="DQW-Ke-SpW"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="save:" destination="4AG-hQ-aHP" eventType="touchUpInside" id="eHx-Fu-LqR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="psw-h3-GCh"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="T7S-0N-Dbf" firstAttribute="centerX" secondItem="NTM-09-SgW" secondAttribute="centerX" id="2Q2-aB-lus"/>
+                            <constraint firstItem="NTM-09-SgW" firstAttribute="leading" secondItem="psw-h3-GCh" secondAttribute="leading" constant="18" id="2Sz-Lt-3re"/>
+                            <constraint firstItem="NTM-09-SgW" firstAttribute="centerY" secondItem="QG0-pT-9WI" secondAttribute="centerY" id="2nn-jW-HKH"/>
+                            <constraint firstItem="T7S-0N-Dbf" firstAttribute="leading" secondItem="psw-h3-GCh" secondAttribute="leading" constant="157" id="IMK-lG-4rG"/>
+                            <constraint firstItem="psw-h3-GCh" firstAttribute="trailing" secondItem="NTM-09-SgW" secondAttribute="trailing" constant="18" id="MZs-Bo-jAr"/>
+                            <constraint firstItem="T7S-0N-Dbf" firstAttribute="top" secondItem="psw-h3-GCh" secondAttribute="top" constant="58" id="aOv-fO-9vt"/>
+                            <constraint firstItem="NTM-09-SgW" firstAttribute="centerX" secondItem="QG0-pT-9WI" secondAttribute="centerX" id="e1o-d7-6ef"/>
+                            <constraint firstItem="T7S-0N-Dbf" firstAttribute="centerX" secondItem="QG0-pT-9WI" secondAttribute="centerX" id="mmZ-bq-L6d"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="W9g-WL-Axv"/>
+                    <connections>
+                        <outlet property="textfield" destination="NTM-09-SgW" id="CIp-Es-uX6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vTF-dk-jyp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1844.9275362318842" y="135.9375"/>
+        </scene>
+        <!--Add View Controller-->
+        <scene sceneID="n0K-l9-kpq">
+            <objects>
+                <viewController storyboardIdentifier="add" id="TeR-IV-MiX" customClass="AddViewController" customModule="Шаги_и_Цели_2" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JVN-zC-cWX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Title..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VZg-Kx-Kf5">
-                                <rect key="frame" x="16" y="130" width="382" height="34"/>
+                                <rect key="frame" x="16" y="174" width="382" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter body..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="utj-Yt-V2Q">
-                                <rect key="frame" x="16" y="180" width="382" height="34"/>
+                                <rect key="frame" x="16" y="224" width="382" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" style="wheels" translatesAutoresizingMaskIntoConstraints="NO" id="iuD-cG-g22">
-                                <rect key="frame" x="47" y="313" width="320" height="216"/>
+                                <rect key="frame" x="47" y="340" width="320" height="216"/>
                             </datePicker>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="p8x-vg-dcN">
-                                <rect key="frame" x="184" y="729" width="46" height="3"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <state key="normal">
-                                    <imageReference key="image" image="keyboard.onehanded.right" catalog="system" symbolScale="medium"/>
-                                </state>
-                                <connections>
-                                    <action selector="save:" destination="TeR-IV-MiX" eventType="touchUpInside" id="MqT-AA-2eF"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="WqE-Nh-fXl"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="WqE-Nh-fXl" firstAttribute="trailing" secondItem="p8x-vg-dcN" secondAttribute="trailing" constant="184" id="01x-7W-moK"/>
                             <constraint firstItem="VZg-Kx-Kf5" firstAttribute="top" secondItem="WqE-Nh-fXl" secondAttribute="top" constant="130" id="175-hv-CF7"/>
                             <constraint firstItem="iuD-cG-g22" firstAttribute="centerY" secondItem="JVN-zC-cWX" secondAttribute="centerY" id="8Jb-D1-aZQ"/>
-                            <constraint firstItem="WqE-Nh-fXl" firstAttribute="bottom" secondItem="p8x-vg-dcN" secondAttribute="bottom" constant="76" id="AQ3-Y1-9Af"/>
-                            <constraint firstItem="p8x-vg-dcN" firstAttribute="top" relation="greaterThanOrEqual" secondItem="iuD-cG-g22" secondAttribute="bottom" constant="200" id="ER8-7l-nVZ"/>
-                            <constraint firstItem="p8x-vg-dcN" firstAttribute="centerX" secondItem="JVN-zC-cWX" secondAttribute="centerX" id="FLD-c4-Dc8"/>
                             <constraint firstItem="WqE-Nh-fXl" firstAttribute="trailing" secondItem="utj-Yt-V2Q" secondAttribute="trailing" constant="16" id="IdG-Cr-FFM"/>
                             <constraint firstItem="utj-Yt-V2Q" firstAttribute="leading" secondItem="WqE-Nh-fXl" secondAttribute="leading" constant="16" id="KGV-gd-5eo"/>
                             <constraint firstItem="iuD-cG-g22" firstAttribute="centerX" secondItem="JVN-zC-cWX" secondAttribute="centerX" id="LQi-OB-3Gw"/>
                             <constraint firstItem="utj-Yt-V2Q" firstAttribute="top" secondItem="VZg-Kx-Kf5" secondAttribute="bottom" constant="16" id="RAA-Ws-Naf"/>
                             <constraint firstItem="WqE-Nh-fXl" firstAttribute="trailing" secondItem="VZg-Kx-Kf5" secondAttribute="trailing" constant="16" id="WkM-3q-yLP"/>
                             <constraint firstItem="VZg-Kx-Kf5" firstAttribute="leading" secondItem="WqE-Nh-fXl" secondAttribute="leading" constant="16" id="fy5-BJ-vu7"/>
-                            <constraint firstItem="p8x-vg-dcN" firstAttribute="leading" secondItem="WqE-Nh-fXl" secondAttribute="leading" constant="184" id="gMC-qb-Jnx"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Oad-eB-zgR"/>
-                    <connections>
-                        <outlet property="bodyField" destination="utj-Yt-V2Q" id="RD1-8E-TiI"/>
-                        <outlet property="datePicker" destination="iuD-cG-g22" id="2GY-TB-I0G"/>
-                        <outlet property="textfield" destination="VZg-Kx-Kf5" id="DWM-VR-W0A"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1bM-2x-NqL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1924.6376811594205" y="135.9375"/>
+            <point key="canvasLocation" x="2686" y="148"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="uwE-uq-U0u">
@@ -210,10 +236,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="XdR-Oc-tbW"/>
+        <segue reference="WNi-zI-z72"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="keyboard.onehanded.right" catalog="system" width="128" height="79"/>
         <image name="square.and.pencil" catalog="system" width="128" height="115"/>
         <image name="target" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">

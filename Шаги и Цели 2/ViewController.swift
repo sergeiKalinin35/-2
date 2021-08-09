@@ -22,11 +22,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    //    tableView.delegate = self
-     //   tableView.dataSource = self
+        tableView.delegate = self
+        tableView.dataSource = self
         
      
-      //  table.rowHeight = 70
+        tableView.rowHeight = 100
         
     //    navigationItem.leftBarButtonItem = editButtonItem
         
@@ -41,7 +41,7 @@ class ViewController: UIViewController {
     }
     
     
-    
+    // редактирование судд  переход через cell  segue
     @IBSegueAction func todoViewcontroller(_ coder: NSCoder) -> TodoViewController? {
       let vc = TodoViewController(coder: coder)
       
@@ -59,18 +59,7 @@ class ViewController: UIViewController {
   }
     
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
- //   @IBAction func  didTapAdd() {
+     //   @IBAction func  didTapAdd() {
         // show add vc
  //       guard let vc = storyboard?.instantiateViewController(identifier: "add") as? AddViewController else {
   //          return
@@ -115,48 +104,7 @@ class ViewController: UIViewController {
     
     
 
-    // Кнопка теста кнопка редактирования
-  //  @IBAction func  didTapTest() {
-        // тест уведомление
-  //      UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound], completionHandler: { success, error in
-     //       if success {
-                
-                // test
-      //          self.scheduleTest()
-      //      }
-    //        else if error != nil {
-     //           print("error occurred")
-                
-     //       }
-            
-    //    })
- //   }
-    //окно уведомления
- //   func scheduleTest() {
-   //     let content = UNMutableNotificationContent()
-   //     content.title  = "Заголовок!"
-    //    content.sound = .default
-    //    content.body = "Описание!⚓️"
-        
-   //     let targetDate = Date().addingTimeInterval(10)
-   //     let trigger = UNCalendarNotificationTrigger(dateMatching: Calendar.current.dateComponents( [.year, .month, .day, .hour, .minute, . second],
-  //                                                                                                from: targetDate)  ,
-                                                    
-    //                                                repeats: false)
-        
-    //    let request = UNNotificationRequest(
-    //        identifier: "some_long_id",
-   //         content: content,
-    //        trigger: trigger)
-    //    UNUserNotificationCenter.current().add(request, withCompletionHandler: { error in
-   //         if error != nil {
-   //             print("something went wrong")
-    //        }
-            
-   //         })
-        
-
-//}
+  
 
 extension ViewController: UITableViewDelegate {
     // смахивание комплита в ячейке с лева на право
@@ -178,17 +126,18 @@ extension ViewController: UITableViewDelegate {
         return UISwipeActionsConfiguration(actions: [action])
       }
     
+
+    
+    
     // удаление ячейки
   
-    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
         return .delete
     }
     
 }
     extension ViewController: UITableViewDataSource {
-    //   func numberOfSections(in tableView: UITableView) -> Int {
-  //      return 1
-  //  }
+   
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return todos.count
     }
@@ -204,13 +153,7 @@ extension ViewController: UITableViewDelegate {
         cell.set(title: todo.title, checked: todo.isComplete)
         
         
-        
-        
-        
-        
-        
-        
-        //   cell.textLabel?.text = models[indexPath.row].title
+    //   cell.textLabel?.text = models[indexPath.row].title
     //   let date = models[indexPath.row].date
      //   let formatter = DateFormatter()
       //  formatter.dateStyle = .full
@@ -219,20 +162,27 @@ extension ViewController: UITableViewDelegate {
         
         return cell
     }
-    
+    // удаляем ячейку
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
       if editingStyle == .delete {
         todos.remove(at: indexPath.row)
         tableView.deleteRows(at: [indexPath], with: .automatic)
       }
     }
-    // двигаем ячейки вверх низ
+        
+     // двигаем ячейки вверх низ
     func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
       let todo = todos.remove(at: sourceIndexPath.row)
       todos.insert(todo, at: destinationIndexPath.row)
     }
     
   }
+
+
+
+
+
+
     
 extension ViewController: CheckTableViewCellDelegate {
   
@@ -248,6 +198,11 @@ extension ViewController: CheckTableViewCellDelegate {
   
 }
     
+
+
+
+
+
 extension ViewController: TodoViewControllerDelegate {
   
   func todoViewController(_ vc: TodoViewController, didSaveTodo todo: Todo) {
@@ -283,16 +238,7 @@ extension ViewController: UIAdaptivePresentationControllerDelegate {
 
     
     
-    // двигаем ячейку
- //   func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
- //      let mu =  todos.remove(at: sourceIndexPath.row)
-  //      todos.insert(mu, at: destinationIndexPath.row)
- //   }
-
- //   func tableView(_ tableView: UITableView, moveRowAt sourceIndexPath: IndexPath, to destinationIndexPath: IndexPath) {
- //     let currenTrack = models.remove(at: sourceIndexPath.row)
-//        models.insert(currenTrack, at: destinationIndexPath.row)
- //   }
+ 
     
     
     
